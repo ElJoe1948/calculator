@@ -1,0 +1,271 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.theme-1 {
+    --main-bg: hsl(221, 54%, 7%);
+    --sec-bg:   hsl(223, 31%, 20%);
+    --result-bg: hsl(224, 36%, 15%);
+
+    --button-del-bg: hsl(225, 21%, 49%);
+    --button-del-shadow: hsl(224, 28%, 35%);
+    --button-result-bg: hsl(6, 63%, 50%);
+    --button-result-shadow: hsl(6, 70%, 34%);
+    --button-bg: hsl(30, 25%, 89%);
+    --button-shadow:hsl(28, 16%, 65%);
+
+    --text-main: hsl(221, 14%, 31%);
+    --text-header: white;
+    --text-result: white;
+    --text-del: white;
+    --text-equal: white;
+}
+
+.theme-2 {
+    --main-bg: hsl(0, 0%, 90%);
+    --sec-bg:   hsl(0, 5%, 81%);
+    --result-bg: hsl(0, 0%, 93%);
+
+    --button-del-bg: hsl(185, 42%, 37%);
+    --button-del-shadow: hsl(185, 58%, 25%);
+    --button-result-bg: hsl(25, 98%, 40%);
+    --button-result-shadow: hsl(25, 99%, 27%);
+    --button-bg: hsl(45, 7%, 89%);
+    --button-shadow:hsl(35, 11%, 61%);
+
+    --text-main: hsl(60, 10%, 19%);
+    --text-header: hsl(60, 10%, 19%);
+    --text-result: hsl(60, 10%, 19%);
+    --text-del: white;
+    --text-equal: white;
+}
+
+.theme-3 {
+    --main-bg: hsl(268, 75%, 9%);
+    --sec-bg:   hsl(268, 71%, 12%);
+    --result-bg: hsl(268, 71%, 12%);
+
+    --button-del-bg: hsl(281, 89%, 26%);
+    --button-del-shadow: hsl(285, 91%, 52%);
+    --button-result-bg: hsl(176, 100%, 44%);
+    --button-result-shadow: hsl(177, 92%, 70%);
+    --button-bg: hsl(268, 47%, 21%);
+    --button-shadow:hsl(290, 70%, 36%);
+
+    --text-main: hsl(52, 100%, 62%);
+    --text-header: hsl(52, 100%, 62%);
+    --text-result: hsl(52, 100%, 62%);
+    --text-del: white;
+    --text-equal: black;
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    background-color: var(--main-bg);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 388px;
+    margin: 20px;
+}
+
+.header {
+    color: var(--text-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: bottom;
+    padding-bottom: 20px;
+}
+
+.theme {
+    font-size: 0.6rem;
+}
+
+.theme-changer {
+    display: flex;
+    align-items: flex-end;
+}
+
+.theme-background label {
+    position: relative;
+    text-align: center;
+    letter-spacing: 5px;
+    z-index: 2;
+}
+
+.theme-changer input {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 3;
+    
+}
+
+.theme-changer input[value="1"]:checked ~ span {
+    left: 19%;
+}
+
+.theme-changer input[value="2"]:checked ~ span {
+    left: 43%;
+}
+
+.theme-changer input[value="3"]:checked ~ span {
+    left: 70%;
+}
+
+.theme-background {
+    background-color: var(--sec-bg);
+    border-radius: 20px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding: 5px;
+    font-size: .7rem;
+    display: inline-block;
+    padding: 2px 10px;
+    margin-left: 5px;
+    padding: 5px 8px 3px;
+    position: relative;
+}
+
+span {
+    width: .8rem;
+    height: .8rem;
+    position: absolute;
+    left: 19%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--button-result-shadow);
+    border-radius: 50%;
+    background-color: var(--button-result-bg);
+    transition: all 0.1s ease-in-out;
+}
+
+
+
+
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--sec-bg);
+    padding: 20px;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px 5px;
+    font-family: inherit;
+    font-size: 32px;
+    box-shadow: 0px 2px var(--button-shadow);
+    color: var(--text-main);
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+#reset, .equal {
+    grid-column: span 2;
+}
+
+#reset, #del {
+    background-color: var(--button-del-bg);
+    box-shadow: 0 2px var(--button-del-shadow);
+    color: var(--text-del);
+}
+
+#reset:hover, #del:hover {
+   opacity: .8;
+}
+
+.equal {
+    background-color: var(--button-result-bg);
+    box-shadow: 0 2px var(--button-result-shadow);
+    color: var(--text-equal);
+}
+
+.result {
+    background-color: var(--result-bg);
+    font-size: 32px;
+    text-align: end;
+    padding: 25px 15px 0;
+    border-radius: .5rem;
+    color: var(--text-result);
+    margin-bottom: 15px;
+    box-shadow: none;
+    border: none;
+    overflow: auto;
+}
+
+::placeholder{
+    color: white;
+}
+
+#curInput::-webkit-outer-spin-button,
+#curInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#curInput {
+    padding-bottom: 10px;
+    padding-right: 0;
+    padding-top: 10px;
+}
+
+#prevInput {
+    color: var(--text-result);
+    opacity: 70%;
+    font-size: 1rem;
+    overflow: auto;
+}
+
+p {
+    min-height: 23.2px;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        margin: 20px;
+    }
+    .numbers {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #reset, .equal {
+        grid-column: span 2;
+    }
+
+    
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.1);
+  }
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2);
+  }
+::-webkit-scrollbar-thumb:hover{
+  	background: rgba(0,0,0,0.4);
+  }
+::-webkit-scrollbar-thumb:active{
+  	background: rgba(0,0,0,.9);
+  }

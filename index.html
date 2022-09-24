@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="theme-1" id="body">
+    <div class="container">
+      <div class="header">
+        <h2>calc</h2>
+        <div class="theme-changer">
+          <div class="theme">THEME</div>
+          <div class="rest">
+            <div class="theme-background">
+              <input type="radio" name="switch" id="1" value="1"
+              /><label for="1"
+                >1</label>
+              <input type="radio" name="switch" id="2" value="2"
+              /><label for="2"
+                >2</label>
+              <input type="radio" name="switch" id="3" value="3"
+              /><label for="3"
+                >3</label>
+              <span class="selector"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="result">  
+        <p id="prevInput"></p>
+        <div class="result" id="curInput">0</div>
+      </div>
+      <div class="numbers">
+        <button class="input" value="7">7</button>
+        <button class="input" value="8">8</button>
+        <button class="input" value="9">9</button>
+        <button id="del">DEL</button>
+        <button class="input" value="4">4</button>
+        <button class="input" value="5">5</button>
+        <button class="input" value="6">6</button>
+        <button class="input" value="+">+</button>
+        <button class="input" value="1">1</button>
+        <button class="input" value="2">2</button>
+        <button class="input" value="3">3</button>
+        <button class="input" value="-">-</button>
+        <button class="input" value=",">,</button>
+        <button class="input" value="0">0</button>
+        <button class="input" value="/">/</button>
+        <button class="input" value="*">x</button>
+        <button id="reset">RESET</button>
+        <button class="equal" id="equalbtn" value="equal">=</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
